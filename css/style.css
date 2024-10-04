@@ -1,0 +1,286 @@
+:root{
+  --primario:#555555;
+  --Parrafos:#FFF;
+  --background_interno:#A4A4A2;
+  --titulos:#F31D1D;
+  --secundario:#FEED24;
+  --tercero:#D4E1F6;
+  --cafe:#784D3C;
+}
+html{
+  box-sizing: border-box;
+  font-size: 62.5%; /*1rem=10px*/
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: var(--primario);
+  font-size: 1.6rem;
+  line-height: 2;
+}
+/*globales*/
+a{
+  text-decoration: none;
+  text-decoration: var(--titulos);
+}
+h1,h2,h3,h4{
+  line-height: 1.2;
+}
+h1{
+  font-size: 4.8rem;
+  font-weight: bold;
+}
+h2{
+  font-size:4rem;
+}
+h3{
+  font-size:3.2rem;
+}
+h4{
+  font-size:2.8rem;
+}
+img{
+  max-width: 100%;
+}
+/*utilidades*/
+.no-margin{
+  margin:0;
+}
+.no-padding{
+  padding: 0;
+}
+.centrar-texto{
+  text-align: center;
+}
+/*header*/
+.ImagenPrincipal{
+  background-image: url("../img/banner.jpg");
+  height: 60rem;
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/*LETRAS IMAGEN*/
+.header__texto{
+  color: var(--Parrafos);
+  text-align: center;
+  margin-top: 5rem;
+}
+/*Blog cafe y navegacion*/
+.bloque{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
+}
+.bloque__titulo{
+  font-weight: bold;
+  color: var(--Parrafos);
+}
+.nostyle{
+  font-weight: normal;
+}
+.bloque__titulo, .bloque__navegacion{
+  margin-top: 5rem;
+  color: var(--Parrafos);
+}
+.navegacion__principal, .Logo{
+  color:var(--Parrafos);
+}
+.navegacion__principal{
+  margin: 1rem;
+}
+/*hover navegacion*/
+.navegacion__principal:hover{
+  background: var(--Parrafos);
+  transition: background 0.7s;
+  color: black;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+/*media navegacion principal*/
+@media(max-width: 780px){
+  .bloque{
+    flex-direction: column;
+    align-items: center;
+  }
+  .bloque__navegacion{
+    margin: 0;
+  }
+  .navegacion__principal{
+    margin:0 2rem;
+    font-size: 3rem;
+  }
+}
+@media(max-width: 500px){
+  .bloque__navegacion{
+    display: grid;
+    grid-template-rows:repeat(3,1fr) ;
+  }
+  .bloque__navegacion{
+    margin: 0 4rem;
+  }
+  .bloque__titulo h2{
+    font-size: 4rem;
+  }
+}
+/*Parte principal*/
+.contenedor{
+  width: min(70%, 140rem);
+  margin: 0 auto;
+}
+.contenido{
+  display: grid;
+  grid-template-columns: 65% 35%;
+  padding: 3rem 0;
+  column-gap: 3rem;
+}
+.TipoCafe{
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+.Leer{
+  font-size: 4rem;
+}
+button{
+  background: rgb(0,0,0, 0.5);
+  color: var(--Parrafos);
+  padding:0 3rem ;
+  border-radius: 1rem;
+}
+/*bordes*/
+article{
+  border-bottom: 1px solid black;
+}
+article:last-of-type{
+  border: none;       /*esto permite poner un borde entre los blogs pero el ultimo agregado no tendra borde inferior*/
+}
+aside{
+  border-left: 1px solid black;
+}
+.blog2{
+  margin-top: 4rem;
+}
+
+/*hover boton leer entrada informacion*/
+button:hover{
+  background: rgb(0,0,0, 1);
+  cursor: pointer;
+}
+/*Media contenido principal*/
+@media(max-width:780px ){
+  .contenido{
+    display: block;
+  }
+  button{
+    width: 100%;
+  }
+}
+@media(max-width: 300px){
+  button{
+    margin: 0;
+    padding: 0;
+  }
+}
+/*Aside nuestros cursos*/
+.sidebar_secundario{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+.sidebar__secundario h3{
+  text-align: center;
+}
+.sidebar__terciario{
+  text-align: center;
+  margin: 0 3rem;
+  padding: 3rem 0;
+}
+/*sidebar borde*/
+.sidebar__terciario{
+  border-bottom: 1px solid black;        /*pongo bordes entre cursos pero el ultimo agregado no tendra borde inferior*/
+}
+.sidebar__terciario:last-of-type{
+  border: none ;
+}
+.Informacion{
+  background: var(--cafe);
+  padding:1rem 3rem;
+  font-size: 3rem;
+}
+/* media Cursos*/
+@media (max-width:400px) {
+  .sidebar__terciario{
+    margin:1rem 0;
+    padding:0;
+  }
+  .sidebar__terciario:nth-child(2){
+    border:none;                    /* quito los borde para adaptacion en iphone 4 por estetica (modificable)*/
+  }
+  aside{
+    border: none;
+  }
+  .Informacion{
+        margin: 0;
+        padding: 0;
+    font-size: 2.5rem;
+
+  }
+}
+/*footer*/
+footer{
+  background: black;
+}
+footer .bloque__navegacion, footer .bloque__titulo{
+  margin:0;
+  padding: 3rem;
+}
+footer .bloque__navegacion{
+  font-size: 2rem;
+}
+/*------------------------Pagina Nosotros------------------------------------------------------*/
+/*la navegacion el background, la imagen principal de blog y el footer se mantienen con la pagina principal
+lo unico que cambia es el contenido del cuerpo principal llamada "Nosotros Principal"*/
+.Nosotros--texto{
+  margin:2rem 0 0 0; /*Titulo nosotros*/
+}
+.Nosotros1{
+  grid-template-columns:50% 50%;
+  max-width: min(70%, 100rem);
+}
+.Informacion_nosotros{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*------------------------Pagina cursos------------------------------------------------------*/
+/*la navegacion el background, la imagen principal de blog y el footer se mantienen con la pagina principal
+lo unico que cambia los cursos*/
+.cursoscontenido{
+  grid-template-columns:repeat(3,1fr);
+}
+@media(min-width: 780px){
+  .cursoscontenido{
+    grid-template-rows:repeat(3,1fr);
+  }
+
+}
+.cursosimg:nth-child(1){
+ grid-column:1/2 ;
+}
+.cursosimg:nth-child(2){
+  grid-column:2/3 ;
+}
+
+.cursosimg:nth-child(3){
+  grid-column:3/4 ;
+}
+.precioinformacion{
+  color: #FFFFFF;
+}
+
+

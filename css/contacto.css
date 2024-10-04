@@ -1,0 +1,153 @@
+:root{
+  --primario:#555555;
+  --Parrafos:#FFF;
+  --background_interno:#A4A4A2;
+  --titulos:#F31D1D;
+  --secundario:#FEED24;
+  --tercero:#D4E1F6;
+  --cafe:#784D3C;
+}
+html{
+  box-sizing: border-box;
+  font-size: 62.5%; /*1rem=10px*/
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: var(--primario);
+  font-size: 1.6rem;
+  line-height: 2;
+}
+/*globales*/
+a{
+  text-decoration: none;
+  text-decoration: var(--titulos);
+}
+h1,h2,h3,h4{
+  line-height: 1.2;
+}
+h1{
+  font-size: 4.8rem;
+  font-weight: bold;
+}
+h2{
+  font-size:4rem;
+}
+h3{
+  font-size:3.2rem;
+}
+h4{
+  font-size:2.8rem;
+}
+img{
+  max-width: 100%;
+}
+/*utilidades*/
+.no-margin{
+  margin:0;
+}
+.no-padding{
+  padding: 0;
+}
+.centrar-texto{
+  text-align: center;
+}
+/*header*/
+.ImagenPrincipal{
+  background-image: url("../img/banner.jpg");
+  height: 60rem;
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/*LETRAS IMAGEN*/
+.header__texto{
+  color: var(--Parrafos);
+  text-align: center;
+  margin-top: 5rem;
+}
+/*Blog cafe y navegacion*/
+.bloque{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
+}
+.bloque__titulo{
+  font-weight: bold;
+  color: var(--Parrafos);
+}
+.nostyle{
+  font-weight: normal;
+}
+.bloque__titulo, .bloque__navegacion{
+  margin-top: 5rem;
+  color: var(--Parrafos);
+}
+.navegacion__principal, .Logo{
+  color:var(--Parrafos);
+}
+.navegacion__principal{
+  margin: 1rem;
+}
+/*hover navegacion*/
+.navegacion__principal:hover, .navegacion__principal--activo{
+  background: var(--Parrafos);
+  transition: background 0.7s;
+  color: black;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+/*media navegacion principal*/
+@media(max-width: 780px){
+  .bloque{
+    flex-direction: column;
+    align-items: center;
+  }
+  .bloque__navegacion{
+    margin: 0;
+  }
+  .navegacion__principal{
+    margin:0 2rem;
+    font-size: 3rem;
+  }
+}
+@media(max-width: 500px){
+  .bloque__navegacion{
+    display: grid;
+    grid-template-rows:repeat(3,1fr) ;
+  }
+  .bloque__navegacion{
+    margin: 0 4rem;
+  }
+  .bloque__titulo h2{
+    font-size: 4rem;
+  }
+}
+/*footer*/
+footer{
+  background: black;
+}
+footer .bloque__navegacion, footer .bloque__titulo{
+  margin:0;
+  padding: 3rem;
+}
+footer .bloque__navegacion{
+  font-size: 2rem;
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
